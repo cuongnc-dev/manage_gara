@@ -1,0 +1,29 @@
+<% provide :title, t("devise.login_system") %>
+<div class="row">
+  <div class="col-xs-8 col-sm-6 col-md-4 col-xs-offset-2 col-sm-offset-3 col-md-offset-4">
+    <div class="panel panel-info panel-login">
+      <div class="panel-heading">
+        <h4 class="text-center"><strong><%= t "devise.login_system" %></strong></h4>
+      </div>
+      <div class="panel-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password, t("devise.password") %>
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          </div>
+          <div class="form-group text-center">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, t("devise.remember_me") %>
+          </div>
+          <div class="form-group text-center">
+            <%= f.submit t("devise.login_button"), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+.add-new {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  > i {
+    line-height: 41px;
+    font-size: 19px;
+    color: green;
+  }
+}
+
+.action {
+  width: 100px;
+  i {
+    font-size: 14px;
+  }
+}
+
+.red {
+  color: red;
+}
+
+@media all and (min-width: 500px) {
+  .min-width-50 {
+    width: 50% !important;
+  }
+}
+
+.padding-0 {
+  padding: 0 !important;
+}
+
+.table {
+  margin-bottom: 0 !important;
+}

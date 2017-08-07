@@ -1,0 +1,9 @@
+<%= form_for @locale, remote: true, html: {class: "col-xs-8 col-sm-12"} do |f| %>
+  <div class="form-group">
+    <%= f.label :name, t("locales.name") %>
+    <%= f.text_field :name, class: "form-control", required: true %>
+  </div>
+  <div class="text-center">
+    <%= f.submit t("save"), class: "btn btn-primary" %>
+  </div>
+<% end %>

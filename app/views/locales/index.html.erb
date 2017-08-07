@@ -1,0 +1,46 @@
+<div class="col-sm-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3">
+  <div class="panel panel-info">
+    <div class="panel-heading relative text-center">
+      <%= t ".list" %>
+      <%= link_to new_locale_path, remote: true, class: "add-new", title: t("customers.new") do %>
+        <i class="glyphicon glyphicon-plus-sign"></i>
+      <% end %>
+    </div>
+    <div class="panel-body padding-0">
+      <% if @locales.present? %>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center"><%= t "locales.name" %></th>
+              <th class="text-center"><%= t "action" %></th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <% @locales.each do |locale| %>
+              <tr>
+                <td><%= locale.name %></td>
+                <td class="action">
+                  <%= link_to edit_locale_path(locale), remote: true do %>
+                    <i class="glyphicon glyphicon-edit"></i>
+                  <% end %>
+                  <%= link_to locale_path(locale), method: :delete, class: "red" do %>
+                    <i class="glyphicon glyphicon-remove"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p class="text-center"><%= t ".no_locales" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal-locale">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body row"></div>
+    </div>
+  </div>
+</div>

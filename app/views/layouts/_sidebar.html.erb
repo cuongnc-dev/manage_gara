@@ -1,0 +1,50 @@
+<div id="sidebar">
+  <div class="logo">
+    <%= link_to root_path do %>
+      <p><%= current_user.name %></p>
+    <% end %>
+    <%= link_to destroy_user_session_path, method: :delete, class: "logout-icon",
+      title: t("devise.log_out") do %>
+      <i class="glyphicon glyphicon-log-out"></i>
+    <% end %>
+  </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav menu-sidebar">
+      <li class="<%= is_active "dashboard" %>">
+        <%= link_to root_path do %>
+          <i class="glyphicon glyphicon-home"></i>
+          <p><%= t "sidebar.dashboard" %></p>
+        <% end %>
+      </li><li class="<%= is_active "customers" %>">
+        <%= link_to customers_path do %>
+          <i class="glyphicon glyphicon-user"></i>
+          <p><%= t "sidebar.customer" %></p>
+        <% end %>
+      </li>
+      <li class="<%= is_active "orders" %>">
+        <%= link_to "#" do %>
+          <i class="glyphicon glyphicon-shopping-cart"></i>
+          <p><%= t "sidebar.order" %></p>
+        <% end %>
+      </li>
+      <li class="<%= is_active "products" %>">
+        <%= link_to "#" do %>
+          <i class="glyphicon glyphicon-barcode"></i>
+          <p><%= t "sidebar.product" %></p>
+        <% end %>
+      </li>
+      <li class="<%= is_active "sales" %>">
+        <%= link_to "#" do %>
+          <i class="glyphicon glyphicon-stats"></i>
+          <p><%= t "sidebar.sales" %></p>
+        <% end %>
+      </li>
+      <li class="<%= is_active "locales" %>">
+        <%= link_to locales_path do %>
+          <i class="glyphicon glyphicon-globe"></i>
+          <p><%= t "sidebar.locale" %></p>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
