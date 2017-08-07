@@ -16,6 +16,7 @@ en:
     index:
       list: "Danh sách khu vực"
       no_locales: "Chưa có khu vực được tạo, vui lòng thêm mới"
+      manager_locales: "Quản lý khu vực"
     name: "Tên khu vực"
     edit: "Chỉnh sửa khu vực"
     new: "Thêm khu vực mới"
@@ -33,6 +34,7 @@ en:
     index:
       list: "Danh sách khách hàng"
       no_customers: "Chưa có khách hàng được tạo, vui lòng thêm mới"
+      manager_customers: "Quản lý khách hàng"
     new: "Thêm khách hàng mới"
     name: "Tên khách hàng"
     phone: "Số điện thoại"
