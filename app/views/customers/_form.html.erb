@@ -1,26 +1,32 @@
 <%= form_for @customer, remote: true do |f| %>
   <div class="col-xs-12 col-sm-6 min-width-50">
     <div class="form-group">
-      <%= f.label :name, t("customers.name") %>
+      <%= f.label :name, t(".name") %>
       <%= f.text_field :name, class: "form-control", required: true %>
     </div>
     <div class="form-group">
-      <%= f.label :phone, t("customers.phone") %>
-      <%= f.number_field :phone, class: "form-control" %>
+      <%= f.label :contact, t(".contact") %>
+      <%= f.text_field :contact, class: "form-control", required: true %>
     </div>
   </div>
   <div class="col-xs-12 col-sm-6 min-width-50">
     <div class="form-group">
-      <%= f.label :address, t("customers.address") %>
+      <%= f.label :phone, t(".phone") %>
+      <%= f.number_field :phone, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :address, t(".address") %>
       <%= f.text_field :address, class: "form-control" %>
     </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 min-width-50">
     <div class="form-group">
       <%= f.label :locale_id, t("sidebar.locale") %>
       <%= f.select :locale_id, options_for_select(@locales.collect{|l| [l.name, l.id]}), {},
         class: "form-control" %>
     </div>
   </div>
-  <div class="text-center">
+  <div class="col-xs-12 col-sm-12 text-center">
     <%= f.submit t("save"), class: "btn btn-primary" %>
   </div>
 <% end %>

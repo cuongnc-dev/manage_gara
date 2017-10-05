@@ -2,8 +2,8 @@
 <div class="col-sm-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3">
   <div class="panel panel-info">
     <div class="panel-heading relative text-center">
-      <%= t ".list" %>
-      <%= link_to new_locale_path, remote: true, class: "add-new", title: t("customers.new") do %>
+      <strong><%= t ".list" %></strong>
+      <%= link_to new_locale_path, remote: true, class: "add-new", title: t(".new") do %>
         <i class="glyphicon glyphicon-plus-sign"></i>
       <% end %>
     </div>
@@ -35,13 +35,6 @@
       <% else %>
         <p class="text-center"><%= t ".no_locales" %></p>
       <% end %>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="modal-locale">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-body row"></div>
     </div>
   </div>
 </div>

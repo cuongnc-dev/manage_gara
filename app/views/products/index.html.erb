@@ -1,0 +1,46 @@
+<% provide :title, t(".manager_products") %>
+<div class="col-xs-12">
+  <div class="panel panel-info">
+    <div class="panel-heading relative text-center">
+      <strong><%= t ".list" %></strong>
+      <%= link_to new_product_path, remote: true, class: "add-new", title: t(".new") do %>
+        <i class="glyphicon glyphicon-plus-sign"></i>
+      <% end %>
+    </div>
+    <div class="panel-body padding-0">
+      <% if @products.present? %>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center"><%= t ".code" %></th>
+              <th class="text-center"><%= t ".name" %></th>
+              <th class="text-center"><%= t ".quantity" %></th>
+              <th class="text-center"><%= t ".unit_price" %></th>
+              <th class="text-center"><%= t "action" %></th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <% @products.each do |product| %>
+              <tr>
+                <td><%= product.product_code %></td>
+                <td><%= product.name %></td>
+                <td><%= product.quantity %></td>
+                <td><%= product.unit_price %></td>
+                <td class="action">
+                  <%= link_to edit_product_path(product), remote: true do %>
+                    <i class="glyphicon glyphicon-edit"></i>
+                  <% end %>
+                  <%= link_to product_path(product), method: :delete, class: "red" do %>
+                    <i class="glyphicon glyphicon-remove"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <h5 class="text-center"><%= t ".no_products" %></h5>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,6 @@ $(document).ready(function() {
   }
 
   $('#edit-modal').on('hidden.bs.modal', function() {
-    $('#edit-modal modal-body').html('');
+    $('#edit-modal .modal-body').html('');
   });
 });
